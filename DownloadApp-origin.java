@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
 
-public class DownloadAppWithTabs {
+public class DownloadApp {
     private JFrame frame;
     private JTextField urlField;
     private JButton downloadButton;
@@ -14,19 +14,13 @@ public class DownloadAppWithTabs {
     private ImageIcon logoImage;
     private JButton resumeButton;
     private JButton pauseButton;
-    private JList<String> recentDownloadsList;
-    private DefaultListModel<String> recentDownloadsListModel;
-    private JTabbedPane tabbedPane;
-    private JPanel downloadPanel;
-    private JPanel recentDownloadsPanel;
-    private JButton showRecentButton;
 
     private volatile boolean isPaused = false;
 
 
-    public DownloadAppWithTabs() {
+    public DownloadApp() {
         initializeTitleLogo();
-        tabOption();
+        initializeUI();
     }
 
     private void initializeTitleLogo() {
@@ -49,62 +43,42 @@ public class DownloadAppWithTabs {
         frame.getContentPane().add(titleLabel, BorderLayout.NORTH);
     }
 
-    private void tabOption(){
-        tabbedPane = new JTabbedPane();
+    private void initializeUI() {
+        // frame = new JFrame("Download App");
+        // frame.setBounds(100, 100, 400, 200);
+        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // frame.getContentPane().setLayout(new BorderLayout());
 
-        downloadPanel = new JPanel();
-        downloadPanel.setLayout(new BorderLayout());
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new BorderLayout());
+
+        JPanel downloadJPanel = new JPanel();
+        downloadJPanel.setLayout(new BorderLayout());
+
+        JPanel progresBarJPanel = new JPanel();
+        progresBarJPanel.setLayout(new BorderLayout());
 
         urlField = new JTextField();
-        // downloadButton = new JButton("Download");
+        inputPanel.add(urlField, BorderLayout.CENTER);
 
         downloadButton = new JButton("Download");
-        downloadPanel.add(downloadButton, BorderLayout.EAST);
+        downloadJPanel.add(downloadButton, BorderLayout.EAST);
 
-        // pause-resume
         pauseButton = new JButton("Pause");
-        downloadPanel.add(pauseButton, BorderLayout.EAST);
+        downloadJPanel.add(pauseButton, BorderLayout.CENTER);
 
         resumeButton = new JButton("Resume");
-        downloadPanel.add(resumeButton, BorderLayout.WEST);
+        downloadJPanel.add(resumeButton, BorderLayout.WEST);
 
-        // Download button
-        downloadPanel.add(urlField, BorderLayout.NORTH);
-        downloadPanel.add(downloadButton, BorderLayout.SOUTH);
-
-        // JPanel progresBarJPanel = new JPanel();
-        // progresBarJPanel.setLayout(new BorderLayout());
-
-        // progress bar
         progressBar = new JProgressBar();
         progressBar.setStringPainted(true);
         progressBar.setVisible(false);
 
-        downloadPanel.add(progressBar, BorderLayout.CENTER);
+        progresBarJPanel.add(progressBar, BorderLayout.CENTER);
 
-        // tab option download
-        tabbedPane.addTab("Download", downloadPanel);
-
-        recentDownloadsPanel = new JPanel();
-        recentDownloadsPanel.setLayout(new BorderLayout());
-
-        recentDownloadsListModel = new DefaultListModel<>();
-        recentDownloadsList = new JList<>(recentDownloadsListModel);
-
-        showRecentButton = new JButton("Show Recent Downloads");
-        recentDownloadsPanel.add(showRecentButton, BorderLayout.NORTH);
-        recentDownloadsPanel.add(new JScrollPane(recentDownloadsList), BorderLayout.CENTER);
-
-        tabbedPane.addTab("Recent Downloads", recentDownloadsPanel);
-
-        frame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
-
-        showRecentButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tabbedPane.setSelectedIndex(1); // Switch to the "Recent Downloads" tab
-            }
-        });
+        frame.getContentPane().add(inputPanel, BorderLayout.SOUTH);
+        frame.getContentPane().add(downloadJPanel, BorderLayout.EAST);
+        frame.getContentPane().add(progressBar, BorderLayout.CENTER);
 
         downloadButton.addActionListener(new ActionListener() {
             @Override
@@ -145,8 +119,6 @@ public class DownloadAppWithTabs {
                         File saveFile = fileChooser.getSelectedFile();
                         FileOutputStream fOut = new FileOutputStream(saveFile);
 
-                        String fileName = saveFile.getName();
-
                         InputStream in = fileStream.getInputStream();
                         long fileSize = fileStream.getContentLengthLong();
 
@@ -165,7 +137,6 @@ public class DownloadAppWithTabs {
                             int progress = (int) ((bytesRead * 100) / fileSize);
                             publish(progress);
                         }
-                        recentDownloadsListModel.addElement(fileName);
 
                         fOut.close();
                         in.close();
@@ -204,7 +175,7 @@ public class DownloadAppWithTabs {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                DownloadAppWithTabs app = new DownloadAppWithTabs();
+                DownloadApp app = new DownloadApp();
                 app.display();
             }
         });
