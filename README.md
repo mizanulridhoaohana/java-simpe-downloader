@@ -20,15 +20,15 @@ Aplikasi ini menampilkan progress bar yang menunjukkan kemajuan pengunduhan saat
 Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesalahan jika terjadi masalah selama pengunduhan.
 
 ## Penjelasan Kode
-### 1. Kode ini menggunakan pustaka Swing untuk membuat antarmuka pengguna grafis (GUI) yang lebih canggih dengan penggunaan tab.
+1. Kode ini menggunakan pustaka Swing untuk membuat antarmuka pengguna grafis (GUI) yang lebih canggih dengan penggunaan tab.
 
-### 2.Metode `downloadFile(String fileUrl)` mengatur pengunduhan file dari URL yang diberikan dalam latar belakang menggunakan `SwingWorker`.
+2.Metode `downloadFile(String fileUrl)` mengatur pengunduhan file dari URL yang diberikan dalam latar belakang menggunakan `SwingWorker`.
 
-### 3.Aplikasi memiliki tab "Download" dan "Recent Downloads" yang dapat digunakan untuk mengakses fungsionalitas yang berbeda.
+3.Aplikasi memiliki tab "Download" dan "Recent Downloads" yang dapat digunakan untuk mengakses fungsionalitas yang berbeda.
 
-### 4.Tombol "Pause" dan "Resume" digunakan untuk mengontrol status pengunduhan.
+4.Tombol "Pause" dan "Resume" digunakan untuk mengontrol status pengunduhan.
 
-### 5.Tab "Recent Downloads" menampilkan daftar unduhan terbaru yang telah berhasil diunduh.
+5.Tab "Recent Downloads" menampilkan daftar unduhan terbaru yang telah berhasil diunduh.
 
 ## Cara Menggunakan Aplikasi
 1. Jalankan aplikasi dengan menjalankan metode `main` pada kelas `DownloadAppWithTabs`.
