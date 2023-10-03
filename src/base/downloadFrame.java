@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package base;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 import java.io.*;
 import java.net.*;
@@ -35,16 +38,16 @@ public class downloadFrame extends javax.swing.JFrame {
 
         tabbedPaneCustom1 = new raven.tabbed.TabbedPaneCustom();
         jPanel1 = new javax.swing.JPanel();
-        pauseButton = new javax.swing.JButton();
-        downloadButton = new javax.swing.JButton();
-        resumeButton = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
         urlField = new javax.swing.JTextField();
+        downloadButton = new button.MyButton();
+        pauseButton = new button.MyButton();
+        resumeButton = new button.MyButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableContent = new javax.swing.JTable();
-        javax.swing.JButton deleteButton = new javax.swing.JButton();
+        deleteButton = new button.MyButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,43 +55,21 @@ public class downloadFrame extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(665, 470));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabbedPaneCustom1.setUnselectedColor(new java.awt.Color(255, 255, 255));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pauseButton.setContentAreaFilled(false);
-        pauseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pauseButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pauseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 130, 50));
-
-        downloadButton.setBackground(new java.awt.Color(148, 0, 255));
-        downloadButton.setContentAreaFilled(false);
-        downloadButton.setText(" ");
-        downloadButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                downloadButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(downloadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 130, 50));
-
-        resumeButton.setText(" ");
-        resumeButton.setContentAreaFilled(false);
-        resumeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resumeButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 130, 50));
-
         progressBar.setStringPainted(true);
         progressBar.setVisible(false);
         progressBar.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 340, 40));
+        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 215, 410, 55));
 
         urlField.setBackground(new java.awt.Color(229, 184, 228));
         urlField.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -99,6 +80,50 @@ public class downloadFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(urlField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 400, 20));
+
+        downloadButton.setBackground(new java.awt.Color(148, 0, 255));
+        downloadButton.setBorder(null);
+        downloadButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/download_btn.png"))); // NOI18N
+        downloadButton.setBorderColor(new java.awt.Color(148, 0, 255));
+        downloadButton.setColor(new java.awt.Color(148, 0, 255));
+        downloadButton.setColorClick(new java.awt.Color(148, 0, 255));
+        downloadButton.setColorOver(new java.awt.Color(229, 184, 228));
+        downloadButton.setFont(new java.awt.Font("Loma", 0, 48)); // NOI18N
+        downloadButton.setRadius(35);
+        downloadButton.setContentAreaFilled(false);
+        downloadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                downloadButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(downloadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 322, 150, 48));
+
+        pauseButton.setBorder(null);
+        pauseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/Pause.png"))); // NOI18N
+        pauseButton.setBorderColor(new java.awt.Color(242, 242, 242));
+        pauseButton.setBorderPainted(false);
+        pauseButton.setColorClick(new java.awt.Color(255, 255, 255));
+        pauseButton.setColorOver(new java.awt.Color(229, 184, 228));
+        pauseButton.setPreferredSize(new java.awt.Dimension(134, 45));
+        pauseButton.setRadius(35);
+        pauseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pauseButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pauseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 322, 150, 48));
+
+        resumeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/Resume.png"))); // NOI18N
+        resumeButton.setBorderColor(new java.awt.Color(242, 242, 242));
+        resumeButton.setColorClick(new java.awt.Color(255, 255, 255));
+        resumeButton.setColorOver(new java.awt.Color(229, 184, 228));
+        resumeButton.setRadius(35);
+        resumeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resumeButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 322, 150, 48));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/downloadTab.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 430));
@@ -120,18 +145,23 @@ public class downloadFrame extends javax.swing.JFrame {
         tableContent.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tableContent);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 130, 490, 210));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 100, 510, 180));
 
-        deleteButton.setText("Delete");
+        deleteButton.setBackground(new java.awt.Color(148, 0, 255));
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/Delete.png"))); // NOI18N
+        deleteButton.setBorderColor(new java.awt.Color(148, 0, 255));
+        deleteButton.setColor(new java.awt.Color(148, 0, 255));
+        deleteButton.setColorClick(new java.awt.Color(148, 0, 255));
+        deleteButton.setColorOver(new java.awt.Color(229, 184, 228));
+        deleteButton.setRadius(35);
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
+        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 322, 150, 48));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/recentTab.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/Group9.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
 
         tabbedPaneCustom1.addTab("Recent Download", jPanel2);
@@ -141,26 +171,29 @@ public class downloadFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void downloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadButtonActionPerformed
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         // TODO add your handling code here:
-//        JOptionPane.showMessageDialog(null,"");
-        String url = urlField.getText();
-        downloadFile(url);
-    }//GEN-LAST:event_downloadButtonActionPerformed
+    }//GEN-LAST:event_formMouseClicked
 
     private void pauseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseButtonActionPerformed
         // TODO add your handling code here:
         isPaused = true;
     }//GEN-LAST:event_pauseButtonActionPerformed
 
-    private void resumeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumeButtonActionPerformed
+    private void downloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadButtonActionPerformed
         // TODO add your handling code here:
-        isPaused = false;
-    }//GEN-LAST:event_resumeButtonActionPerformed
+        String url = urlField.getText();
+        downloadFile(url);
+    }//GEN-LAST:event_downloadButtonActionPerformed
 
     private void urlFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_urlFieldActionPerformed
+
+    private void resumeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumeButtonActionPerformed
+        // TODO add your handling code here:
+        isPaused = false;
+    }//GEN-LAST:event_resumeButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
@@ -168,6 +201,7 @@ public class downloadFrame extends javax.swing.JFrame {
         model.setRowCount(0); // Remove all rows from the table model
         model.fireTableDataChanged(); // Update the JTable's view
     }//GEN-LAST:event_deleteButtonActionPerformed
+    
     
     
     private void downloadFile(String fileUrl) {
@@ -183,6 +217,7 @@ public class downloadFrame extends javax.swing.JFrame {
                     int userSelection = fileChooser.showSaveDialog(frame);
 
                     if (userSelection == JFileChooser.APPROVE_OPTION) {
+                        
                         File saveFile = fileChooser.getSelectedFile();
                         FileOutputStream fOut = new FileOutputStream(saveFile);
 
@@ -283,15 +318,16 @@ public class downloadFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton downloadButton;
+    private button.MyButton deleteButton;
+    private button.MyButton downloadButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton pauseButton;
+    private button.MyButton pauseButton;
     private javax.swing.JProgressBar progressBar;
-    private javax.swing.JButton resumeButton;
+    private button.MyButton resumeButton;
     private raven.tabbed.TabbedPaneCustom tabbedPaneCustom1;
     private javax.swing.JTable tableContent;
     private javax.swing.JTextField urlField;
