@@ -4,9 +4,6 @@
  */
 package base;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
 import javax.swing.table.DefaultTableModel;
@@ -110,12 +107,13 @@ public class downloadFrame extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tableContent.setFont(new java.awt.Font("Dyuthi", 0, 15)); // NOI18N
         tableContent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "Link Address"
+                "Name", "Link Address", "Directory"
             }
         ));
         tableContent.setGridColor(new java.awt.Color(255, 255, 255));
@@ -125,7 +123,12 @@ public class downloadFrame extends javax.swing.JFrame {
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 130, 490, 210));
 
         deleteButton.setText("Delete");
-        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/recentTab.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -158,6 +161,13 @@ public class downloadFrame extends javax.swing.JFrame {
     private void urlFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_urlFieldActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tableContent.getModel();
+        model.setRowCount(0); // Remove all rows from the table model
+        model.fireTableDataChanged(); // Update the JTable's view
+    }//GEN-LAST:event_deleteButtonActionPerformed
     
     
     private void downloadFile(String fileUrl) {
@@ -176,6 +186,7 @@ public class downloadFrame extends javax.swing.JFrame {
                         File saveFile = fileChooser.getSelectedFile();
                         FileOutputStream fOut = new FileOutputStream(saveFile);
 
+                        String downloadDirectory = saveFile.getParent(); 
                         String fileName = saveFile.getName();
                         String url = urlField.getText();
 
@@ -200,7 +211,7 @@ public class downloadFrame extends javax.swing.JFrame {
 //                        recentDownloadsListModel.addElement(fileName);
                         
                         DefaultTableModel model = (DefaultTableModel) tableContent.getModel();
-                        model.addRow(new Object[]{fileName, url});
+                        model.addRow(new Object[]{fileName, url, downloadDirectory});
 
                         // Add this line to update the table's view
                         model.fireTableDataChanged();
