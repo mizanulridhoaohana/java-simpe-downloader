@@ -3,6 +3,12 @@
 # Aplikasi Pengunduhan menggunakan Java
 Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing. Aplikasi ini memiliki fitur-fitur yang lebih canggih dibandingkan dengan (DownloadApp) seperti pengunaan tab untuk mengatur penginduhan dan menampiljan daftar unduhar tebaru.
 
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/assets/112617513/fd3a25e3-396d-43d2-b930-2c3bf8109dc1)
+
+
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/assets/112617513/e82bd4d6-f243-42ad-957e-ca580600243f)
+
+
 ## Fungsi dan Kegunaan 
 ### 1. Antarnuka pengguna (GUI)
 Perogram ini  menyediakan antarmuka pengguna yang berisi tab Download untuk mengunduh file baru, sementara tab recent downloads menampilkan daftar unduhan terbaru.
