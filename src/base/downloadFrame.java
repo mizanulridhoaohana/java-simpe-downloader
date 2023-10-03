@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,20 +36,30 @@ public class downloadFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabbedPaneCustom1 = new raven.tabbed.TabbedPaneCustom();
+        jPanel1 = new javax.swing.JPanel();
         pauseButton = new javax.swing.JButton();
         downloadButton = new javax.swing.JButton();
         resumeButton = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
         urlField = new javax.swing.JTextField();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        recentDownloadsListModel = new DefaultListModel<>();
-        recentDownloadsList = new javax.swing.JList<>(recentDownloadsListModel);
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableContent = new javax.swing.JTable();
+        javax.swing.JButton deleteButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("DownloadAppJava");
         setAlwaysOnTop(true);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(665, 470));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tabbedPaneCustom1.setUnselectedColor(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pauseButton.setContentAreaFilled(false);
         pauseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +67,7 @@ public class downloadFrame extends javax.swing.JFrame {
                 pauseButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(pauseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 170, 80));
+        jPanel1.add(pauseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 130, 50));
 
         downloadButton.setBackground(new java.awt.Color(148, 0, 255));
         downloadButton.setContentAreaFilled(false);
@@ -66,7 +77,7 @@ public class downloadFrame extends javax.swing.JFrame {
                 downloadButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(downloadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 640, 180, 70));
+        jPanel1.add(downloadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 130, 50));
 
         resumeButton.setText(" ");
         resumeButton.setContentAreaFilled(false);
@@ -75,33 +86,54 @@ public class downloadFrame extends javax.swing.JFrame {
                 resumeButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, 180, 70));
+        jPanel1.add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 130, 50));
 
         progressBar.setStringPainted(true);
         progressBar.setVisible(false);
-        getContentPane().add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 580, 90));
+        progressBar.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 340, 40));
 
         urlField.setBackground(new java.awt.Color(229, 184, 228));
+        urlField.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         urlField.setBorder(null);
         urlField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 urlFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(urlField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 560, 40));
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 360, 60));
+        jPanel1.add(urlField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 400, 20));
 
-        recentDownloadsList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(recentDownloadsList);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/downloadTab.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 430));
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, -1, -1));
+        tabbedPaneCustom1.addTab("Download", jPanel1);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/revisi_download.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 770));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tableContent.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Link Address"
+            }
+        ));
+        tableContent.setGridColor(new java.awt.Color(255, 255, 255));
+        tableContent.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(tableContent);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 130, 490, 210));
+
+        deleteButton.setText("Delete");
+        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component/recentTab.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
+
+        tabbedPaneCustom1.addTab("Recent Download", jPanel2);
+
+        getContentPane().add(tabbedPaneCustom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,6 +177,7 @@ public class downloadFrame extends javax.swing.JFrame {
                         FileOutputStream fOut = new FileOutputStream(saveFile);
 
                         String fileName = saveFile.getName();
+                        String url = urlField.getText();
 
                         InputStream in = fileStream.getInputStream();
                         long fileSize = fileStream.getContentLengthLong();
@@ -164,7 +197,14 @@ public class downloadFrame extends javax.swing.JFrame {
                             int progress = (int) ((bytesRead * 100) / fileSize);
                             publish(progress);
                         }
-                        recentDownloadsListModel.addElement(fileName);
+//                        recentDownloadsListModel.addElement(fileName);
+                        
+                        DefaultTableModel model = (DefaultTableModel) tableContent.getModel();
+                        model.addRow(new Object[]{fileName, url});
+
+                        // Add this line to update the table's view
+                        model.fireTableDataChanged();
+
 
                         fOut.close();
                         in.close();
@@ -234,12 +274,15 @@ public class downloadFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton downloadButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton pauseButton;
     private javax.swing.JProgressBar progressBar;
-    private javax.swing.JList<String> recentDownloadsList;
     private javax.swing.JButton resumeButton;
+    private raven.tabbed.TabbedPaneCustom tabbedPaneCustom1;
+    private javax.swing.JTable tableContent;
     private javax.swing.JTextField urlField;
     // End of variables declaration//GEN-END:variables
 }
