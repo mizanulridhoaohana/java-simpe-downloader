@@ -1,7 +1,7 @@
 # Pemrograman Internet 2023
 
-# Aplikasi Pengunduhan dengan Tab (DownloadAppWithTabs)
-Program DownloadWithTabs adalah yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing. Aplikasi ini memiliki fitur-fitur yang lebih canggih dibandingkan dengan (DownloadApp) seperti pengunaan tab untuk mengatur penginduhan dan menampiljan daftar unduhar tebaru.
+# Aplikasi Pengunduhan menggunakan Java
+Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing. Aplikasi ini memiliki fitur-fitur yang lebih canggih dibandingkan dengan (DownloadApp) seperti pengunaan tab untuk mengatur penginduhan dan menampiljan daftar unduhar tebaru.
 
 ## Fungsi dan Kegunaan 
 ### 1. Antarnuka pengguna (GUI)
