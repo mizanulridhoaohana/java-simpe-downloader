@@ -38,7 +38,7 @@ Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesala
 1. GUI sederhana
    Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch `main`.
    
-   ```git clone https://github.com/mizanulridhoaohana/java-simpe-downloader.git```
+   [git clone] (https://github.com/mizanulridhoaohana/java-simpe-downloader.git)
    
 3. GUI perubahan menggunakan NetBeans
    Untuk versi ini, anda dapat mengunduh/clone brach `master` yang ada di repository ini ke dalam NetBeans anda.
