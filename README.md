@@ -5,12 +5,16 @@ Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL de
 
 
 ![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-33-40.png)
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-34-19.png)
+
 
 Program awal menampilkan tampilan GUI secara kasar karena memberikan prioritas terhadap fungsionalitas terlebih dahulu. Terdapat dua halaman utama yang tersedia, yaitu halaman "Download" dan "Recent Download." Fitur-fitur yang tersedia pada halaman "Download" mencakup kemampuan untuk menghentikan dan melanjutkan proses pengunduhan (pause dan resume) guna mengatur progress pengunduhan. Informasi mengenai daftar pengunduhan yang baru-baru ini dilakukan dapat ditemukan pada halaman selanjutnya, yaitu "Recent Download."
 
 
 
-![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/assets/112617513/fd3a25e3-396d-43d2-b930-2c3bf8109dc1)
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-34-55.png)
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-35-00.png)
+
 
 Pada halaman berikutnya, kami meningkatkan desain dengan menambahkan warna dan tata letak yang lebih baik agar memudahkan pengguna dalam penggunaan. Kami menyediakan kolom tautan yang lebih jelas dengan posisi yang ditengah, serta menambahkan bilah progres unduh untuk memantau persentase unduhan. Kami memilih kombinasi warna ungu dan hitam untuk memberikan kontras yang nyaman bagi mata pengguna.
 
