@@ -3,10 +3,12 @@
 # Aplikasi Pengunduhan menggunakan Java
 Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing.
 
-Dalam proyek ini kami mengembangkan 2 aplikasi yang dibangun dengan tools yang berbeda yaitu Visual Studio Code dan NetBeans. Kedua aplikasi yang dibuat memiliki fitur yang cukup menarik untuk digunakan, diantaranya fitur pause, resume dan history unduhan. Aplikasi yang dibangun menggunakan `VS Code` memiliki `GUI` yang sangat `sederhana` karena sulitnya mengimplementasikan swing tanpa ada panduan. Sedangkan, Aplikasi yang dibangun menggunakan `NetBeans` memiliki `tampilan GUI yang lebih elegan dan memanjakan mata`, hal ini didukung oleh fitur design yang disediakan oleh NetBeans sehingga memudahkan developer untuk berkreasi.
+Dalam proyek ini kami mengembangkan 2 aplikasi yang dibangun dengan tools yang berbeda yaitu Visual Studio Code dan NetBeans. Kedua aplikasi yang dibuat memiliki fitur yang cukup menarik untuk digunakan, diantaranya fitur pause, resume dan history unduhan. Aplikasi yang dibangun menggunakan `VS Code` memiliki `GUI` yang sangat `sederhana` karena sulitnya mengimplementasikan swing tanpa ada panduan. 
+
+Sedangkan, Aplikasi yang dibangun menggunakan `NetBeans` memiliki `tampilan GUI yang lebih elegan dan memanjakan mata`, hal ini didukung oleh fitur design yang disediakan oleh NetBeans sehingga memudahkan developer untuk berkreasi.
 
 
-**CATATAN   : Projeck berada di branch main**
+**CATATAN   : Projeck menggunakan VS Code berada di branch main**
 
 ![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-33-40.png)
 ![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-34-19.png)
@@ -14,7 +16,7 @@ Dalam proyek ini kami mengembangkan 2 aplikasi yang dibangun dengan tools yang b
 
 Program awal menampilkan tampilan GUI secara kasar karena memberikan prioritas terhadap fungsionalitas terlebih dahulu. Terdapat dua halaman utama yang tersedia, yaitu halaman "Download" dan "Recent Download." Fitur-fitur yang tersedia pada halaman "Download" mencakup kemampuan untuk menghentikan dan melanjutkan proses pengunduhan (pause dan resume) guna mengatur progress pengunduhan. Informasi mengenai daftar pengunduhan yang baru-baru ini dilakukan dapat ditemukan pada halaman selanjutnya, yaitu "Recent Download."
 
-
+**CATATAN   : Projeck menggunakan NetBeans berada di branch master**
 ![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-34-55.png)
 ![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-35-00.png)
 
