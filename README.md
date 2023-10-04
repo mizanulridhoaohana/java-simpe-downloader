@@ -1,7 +1,9 @@
 # Pemrograman Internet 2023
 
 # Aplikasi Pengunduhan menggunakan Java
-Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing. Aplikasi ini memiliki fitur-fitur yang lebih canggih dibandingkan dengan (DownloadApp) seperti pengunaan tab untuk mengatur pengunduhan dan menampilkan daftar unduhan tebaru.
+Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing.
+
+Dalam proyek ini kami mengembangkan 2 aplikasi yang dibangun dengan tools yang berbeda yaitu Visual Studio Code dan NetBeans. Kedua aplikasi yang dibuat memiliki fitur yang cukup menarik untuk digunakan, diantaranya fitur pause, resume dan history unduhan. Aplikasi yang dibangun menggunakan `VS Code` memiliki `GUI` yang sangat `sederhana` karena sulitnya mengimplementasikan swing tanpa ada panduan. Sedangkan, Aplikasi yang dibangun menggunakan `NetBeans` memiliki `tampilan GUI yang lebih elegan dan memanjakan mata`, hal ini didukung oleh fitur design yang disediakan oleh NetBeans sehingga memudahkan developer untuk berkreasi.
 
 
 **CATATAN   : Projeck berada di branch main**
@@ -36,12 +38,14 @@ Aplikasi ini menampilkan progress bar yang menunjukkan kemajuan pengunduhan saat
 Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesalahan jika terjadi masalah selama pengunduhan.
 
 ## Github Repository
-1. GUI sederhana
+1. GUI sederhana menggunakan Visual Studio Code
+   
    Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch `main`.
    
    ```git clone https://github.com/mizanulridhoaohana/java-simpe-downloader.git```
    
-3. GUI perubahan menggunakan NetBeans
+3. GUI pengembangan menggunakan NetBeans
+   
    Untuk versi ini, anda dapat mengunduh/clone brach `master` yang ada di repository ini ke dalam NetBeans anda.
 
 
