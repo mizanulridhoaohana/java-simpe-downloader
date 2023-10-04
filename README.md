@@ -36,7 +36,7 @@ Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesala
 
 ## Github Repository
 1. GUI sederhana
-   Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch "main".
+   Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch `main`.
    
    ```git clone https://github.com/mizanulridhoaohana/java-simpe-downloader.git```
    
@@ -46,8 +46,8 @@ Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesala
 
 ## Cara Menggunakan Aplikasi
 1. Clone code yang ingin dijalankan, kemudian run code agar menampilkan aplikasi.
-   - Untuk GUI sederhana anda dapat langsung mengeksekusi file bernama "DownloadAppWithTabs.java".
-   - Sedangkan untuk GUI perubahan anda dapat mengakses file "downloadFrame.java" pada branch master ("./src/base/")
+   - Untuk GUI sederhana anda dapat langsung mengeksekusi file bernama `DownloadAppWithTabs.java`.
+   - Sedangkan untuk GUI perubahan anda dapat mengakses file `./src/base/downloadFrame.java` pada branch master.
 3. Pada tab "Download", masukkan URL file yang ingin Anda unduh ke dalam kotak teks.
 4. Klik tombol "Download" untuk memulai pengunduhan.
 5. Anda dapat menggunakan tombol "Pause" dan "Resume" untuk mengontrol pengunduhan.
