@@ -211,22 +211,24 @@ public class downloadFrame extends javax.swing.JFrame {
                 try {
                     URL remoteFile = new URL(fileUrl);
                     URLConnection fileStream = remoteFile.openConnection();
-
+                    
+                    //select directory and define output stream  
                     JFileChooser fileChooser = new JFileChooser();
                     fileChooser.setDialogTitle("Save File");
                     int userSelection = fileChooser.showSaveDialog(frame);
 
                     if (userSelection == JFileChooser.APPROVE_OPTION) {
-                        
+                                          
                         File saveFile = fileChooser.getSelectedFile();
                         FileOutputStream fOut = new FileOutputStream(saveFile);
-
+                        
+                        //define string will be pass to the table content
                         String downloadDirectory = saveFile.getParent(); 
                         String fileName = saveFile.getName();
                         String url = urlField.getText();
 
                         InputStream in = fileStream.getInputStream();
-                        long fileSize = fileStream.getContentLengthLong();
+                        long fileSize = fileStream.getContentLengthLong(); // progressbar percentage
 
                         int data;
                         long bytesRead = 0;
@@ -236,7 +238,8 @@ public class downloadFrame extends javax.swing.JFrame {
                                 Thread.sleep(10000); // Sleep to reduce CPU usage while paused
                                 continue;
                             }
-
+                            
+                            // save file
                             fOut.write(data);
                             bytesRead++;
 
