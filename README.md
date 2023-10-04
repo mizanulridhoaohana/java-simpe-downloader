@@ -37,7 +37,7 @@ Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesala
 ## Github Repository
 1. GUI sederhana
    Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch main.
-   '''
+   '''html
    git clone https://github.com/mizanulridhoaohana/java-simpe-downloader.git
    '''
    
