@@ -4,7 +4,7 @@
 Ini adalah program yang memungkinkan pengguna untuk mengunduh file dengan URL dengan perantara antarmuka pengguna grafis (GUI) berbasis Swing. Aplikasi ini memiliki fitur-fitur yang lebih canggih dibandingkan dengan (DownloadApp) seperti pengunaan tab untuk mengatur penginduhan dan menampiljan daftar unduhar tebaru.
 
 
-![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/assets/112617513/e82bd4d6-f243-42ad-957e-ca580600243f)
+![image](https://github.com/mizanulridhoaohana/java-simpe-downloader/blob/main/Screenshot%20from%202023-10-04%2011-33-40.png)
 
 Program awal menampilkan tampilan GUI secara kasar karena memberikan prioritas terhadap fungsionalitas terlebih dahulu. Terdapat dua halaman utama yang tersedia, yaitu halaman "Download" dan "Recent Download." Fitur-fitur yang tersedia pada halaman "Download" mencakup kemampuan untuk menghentikan dan melanjutkan proses pengunduhan (pause dan resume) guna mengatur progress pengunduhan. Informasi mengenai daftar pengunduhan yang baru-baru ini dilakukan dapat ditemukan pada halaman selanjutnya, yaitu "Recent Download."
 
