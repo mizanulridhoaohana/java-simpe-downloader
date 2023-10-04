@@ -34,21 +34,23 @@ Aplikasi ini menampilkan progress bar yang menunjukkan kemajuan pengunduhan saat
 ### 5. Penanganan kesalahan
 Aplikasi ini memiliki penanganan kesalahan yang baik dan memberikan pesan kesalahan jika terjadi masalah selama pengunduhan.
 
-## Penjelasan Kode
-1. Kode ini menggunakan pustaka Swing untuk membuat antarmuka pengguna grafis (GUI) yang lebih canggih dengan penggunaan tab.
+## Github Repository
+1. GUI sederhana
+   Untuk GUI sederhana, anda bisa langsung mengunduh/clone file yang ada di branch main.
+   '''
+   git clone https://github.com/mizanulridhoaohana/java-simpe-downloader.git
+   '''
+   
+3. GUI perubahan menggunakan NetBeans
+   Untuk versi ini, anda dapat mengunduh/clone brach master yang ada di repository ini ke dalam NetBeans anda.
 
-2.Metode `downloadFile(String fileUrl)` mengatur pengunduhan file dari URL yang diberikan dalam latar belakang menggunakan `SwingWorker`.
-
-3.Aplikasi memiliki tab "Download" dan "Recent Downloads" yang dapat digunakan untuk mengakses fungsionalitas yang berbeda.
-
-4.Tombol "Pause" dan "Resume" digunakan untuk mengontrol status pengunduhan.
-
-5.Tab "Recent Downloads" menampilkan daftar unduhan terbaru yang telah berhasil diunduh.
 
 ## Cara Menggunakan Aplikasi
-1. Jalankan aplikasi dengan menjalankan metode `main` pada kelas `DownloadAppWithTabs`.
-2. Pada tab "Download", masukkan URL file yang ingin Anda unduh ke dalam kotak teks.
-3. Klik tombol "Download" untuk memulai pengunduhan.
-4. Anda dapat menggunakan tombol "Pause" dan "Resume" untuk mengontrol pengunduhan.
-5. Progress pengunduhan akan ditampilkan pada progress bar.
-6. Beralih ke tab "Recent Downloads" untuk melihat daftar unduhan terbaru yang telah selesai.
+1. Clone code yang ingin dijalankan, kemudian run code agar menampilkan aplikasi.
+   - Untuk GUI sederhana anda dapat langsung mengeksekusi file bernama "DownloadAppWithTabs.java".
+   - Sedangkan untuk GUI perubahan anda dapat mengakses file "downloadFrame.java" pada branch master ("./src/base/")
+3. Pada tab "Download", masukkan URL file yang ingin Anda unduh ke dalam kotak teks.
+4. Klik tombol "Download" untuk memulai pengunduhan.
+5. Anda dapat menggunakan tombol "Pause" dan "Resume" untuk mengontrol pengunduhan.
+6. Progress pengunduhan akan ditampilkan pada progress bar.
+7. Beralih ke tab "Recent Downloads" untuk melihat daftar unduhan terbaru yang telah selesai.
